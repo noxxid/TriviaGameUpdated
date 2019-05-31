@@ -94,9 +94,9 @@ for (var i = 0; i < myQuestions.length; i++) {
 
     for (var property1 in myQuestions[i].answers) {
 
-
-        var answers = $("<input type='radio' name='answer' value=" + myQuestions[i].answers[property1] + ">");
-        answers.attr("value", myQuestions[i].answers[property1]);
+        var values = myQuestions[i].answers[property1];
+        var answers = $("<input type='radio' name='answer' value=" + property1 + ">" + `<label for="${values}">${values}</label> <br>`);
+        // answers.attr("value", myQuestions[i].answers[property1]);
 
         console.log(myQuestions[i].answers[property1]);
 
@@ -141,6 +141,22 @@ var timer = setInterval(function () {
     }
 }, 1000);
 
+var userInput = [];
+
+
+document.getElementById("submit").onclick = submitQuiz;
+function submitQuiz() {
+    input = $("input[name=answer]:checked").val();
+    for (var i = 0; i < input.length; i++) {
+        // input = $("input[name=answer]:checked").val();
+        userInput.push(input);
+        console.log(userInput[i]);
+    }
+}
+
+timesUp(function () {
+    setTimeout
+})
 
 
 
