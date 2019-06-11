@@ -142,21 +142,37 @@ var timer = setInterval(function () {
 }, 1000);
 
 var userInput = [];
+var input;
 
+$("input[name='answer']").change(function () {
+    var checked = $(this).val();
+    if ($(this).is(':checked')) {
+        userInput.push(checked);
+    } else {
+        userInput.splice($.inArray(checked, userInput), 1);
+    }
+});
 
 document.getElementById("submit").onclick = submitQuiz;
 function submitQuiz() {
-    input = $("input[name=answer]:checked").val();
+    input = $("input[name='answer']:checked").val();
     for (var i = 0; i < input.length; i++) {
-        // input = $("input[name=answer]:checked").val();
         userInput.push(input);
-        console.log(userInput[i]);
+        console.log(userInput);
     }
+    var amountCorrect = 0;
+    for (var k = 0; k < myQuestions.length; k++) {
+        for (var property1 in myQuestions[i].correctanswer) {
+            console.log(property1);
+        }
+
+    };
 }
 
-timesUp(function () {
-    setTimeout
-})
+
+    // timesUp(function () {
+    //     setTimeout
+    // })
 
 
 
