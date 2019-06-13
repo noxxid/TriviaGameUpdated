@@ -161,13 +161,44 @@ function submitQuiz() {
         console.log(userInput);
     }
     var amountCorrect = 0;
-    for (var k = 0; k < myQuestions.length; k++) {
-        for (var property1 in myQuestions[i].correctanswer) {
-            console.log(property1);
-        }
+    var correctanswer = [];
 
-    };
-}
+
+    // myQuestions.forEach(obj => {
+    //     console.log(obj.correctanswer)  // correct answer
+    //     //wrong answer
+    //     // compare them 
+    // })
+
+    for (let index = 0; index < myQuestions.length; index++) {
+        console.log(myQuestions[index].correctanswer)  // correct answer
+        console.log(userInput[index]) //wrong answer
+        if (myQuestions[index].correctanswer === userInput[index]) {
+            amountCorrect++;// compare them   
+        };
+        console.log(amountCorrect);
+
+    }
+    alert("You got " + amountCorrect + " correct!")
+
+
+
+
+    // for (let k = 0; k < myQuestions.length; k++) {
+    //     for (let property1 in myQuestions[k].correctanswer) {
+    //         correctanswer.push(myQuestions[k].correctanswer[property1]);
+    //         console.log(correctanswer);
+    //     }
+
+    // };
+    // loop through arrays 
+    // if userinput[i] === correctanswer[k]
+    // then amountcorrect++;
+};
+
+
+
+
 
 
     // timesUp(function () {
